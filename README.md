@@ -37,9 +37,9 @@ Package versions are intentionally not claimed to match the original analysis en
 Provide restricted data locally (default paths below), or set environment variables to the authorized CSV locations:
 
 ```bash
-export CABG_MAIN_DATA="/secure/path/to/Total_TL_CABG_data_cleaned_BRM_holdout70.csv"
-export CABG_ADAPT_DATA="/secure/path/to/BRM_CABG_adaptation_30pct.csv"
-export CABG_OUTPUT_DIR="outputs/calibrated_framework_seed1127"
+export CABG_MAIN_DATA="/secure/path/to/Your_source_data.csv.csv"
+export CABG_ADAPT_DATA="/secure/path/to/Your_adaptation_data.csv"
+export CABG_OUTPUT_DIR="outputs"
 python code/analysis.py
 ```
 
