@@ -51,11 +51,24 @@ random.seed(SEED)
 np.random.seed(SEED)
 
 # Primary data files used in the original analysis
+#
+# MAIN_DATA_PATH:
+#   Contains the complete SNUH cohort and 70% of the BRM cohort
+#   designated as the fixed external evaluation set.
+#
+# BRM_ADAPT_PATH:
+#   Contains the remaining 30% of the BRM cohort
+#   used for weighted model adaptation and recalibration.
+#
+# The BRM adaptation and evaluation sets are mutually exclusive.
+# Clinical datasets are not publicly available.
+
 MAIN_DATA_PATH = Path(
-    os.environ.get("CABG_MAIN_DATA", "datasets/BRM_subset/Total_TL_CABG_data_cleaned_BRM_holdout70.csv")
+    os.environ.get("CABG_MAIN_DATA", "Your_source_data.csv")
 )
+
 BRM_ADAPT_PATH = Path(
-    os.environ.get("CABG_ADAPT_DATA", "datasets/BRM_subset/BRM_CABG_adaptation_30pct.csv")
+    os.environ.get("CABG_ADAPT_DATA", "Your_adaptation_data.csv")
 )
 
 OUTPUT_DIR = Path(os.environ.get("CABG_OUTPUT_DIR", "outputs/calibrated_framework_seed1127"))
